@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-
+import React, { useState } from "react";
+import Axios from "axios";
 import './App.css';
 
 function App() {
+  const [rank, setRank] = useState("")
+
+  const getRank = () => {
+    Axios.get("https://api.henrikdev.xyz/valorant/v1/mmr/na/Sunbearo/NA1?fbclid=IwAR3kLapneRvgX_KVWg15YyiNg4Whsd1kGwNrLGUFNkoHH4hfzVgoHIpDnGg").then(
+      (response) => {
+        console.log(response);
+      setRank(response.data.data.name + response.data.data.tag + "... " + response.data.data.currenttierpatched)
+      setRank(response.data.data.name)
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+    Rank:
+    {rank}
+  </div>
   );
 }
 
