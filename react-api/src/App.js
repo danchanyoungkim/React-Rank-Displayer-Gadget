@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Axios from "axios";
 import './App.css';
 
+import
+
 function App() {
   const [rank, setRank] = useState("")
 
@@ -16,6 +18,7 @@ function App() {
   return (
   <div>
     Rank:
+
     {rank}
   </div>
   );
