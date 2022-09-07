@@ -1,26 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom"
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
 
 function App() {
+  const url = "https://api.henrikdev.xyz/valorant/v1/mmr/na/Sunbearo/NA1?fbclid=IwAR3kLapneRvgX_KVWg15YyiNg4Whsd1kGwNrLGUFNkoHH4hfzVgoHIpDnGg"
+  const [rank, setRank] = useState([])
+
+  useEffect(() => {
+    Axios.get(url).then(
+      (response) => {
+        console.log(response);
+        setRank(response.data.data.name + response.data.data.currenttierpatched);
+      }
+    );
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Rank?</h1>Rank: {rank}
     </div>
-  );
+  )
 }
 
 export default App;
