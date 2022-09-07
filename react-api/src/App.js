@@ -3,7 +3,9 @@ import Axios from 'axios';
 
 function App() {
   const url = "https://api.henrikdev.xyz/valorant/v1/mmr/na/Sunbearo/NA1?fbclid=IwAR3kLapneRvgX_KVWg15YyiNg4Whsd1kGwNrLGUFNkoHH4hfzVgoHIpDnGg"
-  const [rank, setRank] = useState([])
+  const [rank, setRank] = useState("")
+
+  let content = null
 
   useEffect(() => {
     Axios.get(url).then(
@@ -14,7 +16,8 @@ function App() {
     );
   }, [url])
 
-  return (
+  if(rank){
+    content =
     <div>
       <h1>{rank.name}#{rank.tag}</h1>
       <div>
@@ -24,6 +27,13 @@ function App() {
         />
       </div>
       <h2>{rank.currenttierpatched}</h2>
+      <h2>RR: {rank.ranking_in_tier}</h2>
+    </div>
+  }
+
+  return (
+    <div>
+      {content}
     </div>
   )
 }
