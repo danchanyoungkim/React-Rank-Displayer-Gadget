@@ -9,14 +9,21 @@ function App() {
     Axios.get(url).then(
       (response) => {
         console.log(response);
-        setRank(response.data.data.name + response.data.data.currenttierpatched);
+        setRank(response.data.data);
       }
     );
-  }, [])
+  }, [url])
 
   return (
     <div>
-      <h1>Rank?</h1>Rank: {rank}
+      <h1>{rank.name}#{rank.tag}</h1>
+      <div>
+        <img
+          src={rank.images.large}
+          alt={rank.currenttierpatched}
+        />
+      </div>
+      <h2>{rank.currenttierpatched}</h2>
     </div>
   )
 }
