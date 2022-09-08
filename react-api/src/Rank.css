@@ -1,0 +1,39 @@
+/* Actual css for rank display */
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  width: 20%;
+}
+
+.cardHeader {
+  background-color: #fa4454 !important;
+}
+
+.title {
+  /* width: 40% !important; */
+  border: 1rem !important;
+}
+
+.cardImg {
+  width: 10% !important;
+  height: 10% !important;
+}
+
+/* @media screen and (max-width: 825px) {
+  .cardImg {
+    width: 15% !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cardImg {
+    width: 20% !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cardImg {
+    width: 40% !important;
+  }
+} */
