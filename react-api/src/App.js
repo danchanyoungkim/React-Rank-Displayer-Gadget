@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import Youtube from "./component/Youtube/Youtube";
+import YoutubeVideo from "./component/YoutubeVideo/Youtube";
 import './Rank.css';
 
 import valorantLogo from "./images/Valorant_logo.jpeg"
@@ -68,7 +68,7 @@ function App() {
       </CardHeader>
 
       <Card.Body className='youtube'>
-        <Youtube embedId="l_sJOprlF30" />
+        <YoutubeVideo embedId="l_sJOprlF30" />
       </Card.Body>
     </Card>
   }
