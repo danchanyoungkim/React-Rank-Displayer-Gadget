@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import Youtube from "./component/Youtube/Youtube";
 import './Rank.css';
 
 import image from "./images/Valorant_logo.jpeg"
@@ -39,22 +40,28 @@ function App() {
   if(rank){
     content =
     <Card>
-      <CardHeader className='cardHeader'>
+      <Card.Body className='cardHeader'>
         <Card.Img className='title' src={image} />
+      </Card.Body>
+      
+      <CardHeader className='cardHeader2'>
+        <div className='nameTag'><Card.Title className='nameTagText'>{rank.name} #{rank.tag}</Card.Title></div>  
+        <Card.Img className='cardImg' src={data.card.wide} />   
       </CardHeader>
-       
 
-     
       <Card.Footer>
-        {rank.name}#{rank.tag}
-          <Card.Title>{rank.currenttierpatched}</Card.Title>
-          <Card.Text>RR: {rank.ranking_in_tier}</Card.Text>
-        <Col>
-          <Card.Img className="cardImg" src={rank.images.large} alt={rank.currenttierpatched} />
-        </Col>
+          <Col>
+            <Card.Title>Current Rank: {rank.currenttierpatched}</Card.Title>
+            <Card.Title>RR: {rank.ranking_in_tier}</Card.Title>
+          </Col>
+            <Card.Img className="rankImg" src={rank.images.large} alt={rank.currenttierpatched} />
       </Card.Footer>
+
       <Card.Body>
-        
+        <Youtube embedId="l_sJOprlF30" />
+      </Card.Body>
+
+      <Card.Body> 
       </Card.Body>
     </Card>
   }
