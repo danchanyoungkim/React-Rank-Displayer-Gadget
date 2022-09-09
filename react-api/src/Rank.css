@@ -1,4 +1,4 @@
-/* Actual css for rank display */
+/* Actual CSS for Valorant Rank Display */
 .card {
   margin: 0 auto;
   float: none;
@@ -6,51 +6,73 @@
   width: 25%;
   position: relative;
   margin-top: 10px;
+  
 }
 
+/* Top Header */
 .cardHeader {
   background-color: #fa4454 !important;
+  border-radius: 3px 3px 0 0;
+  text-align: center;
 }
 
 .title {
+  width: 80% !important;
   border: 5px solid white !important;
 }
 
+/* Bottom Header */
 .cardHeader2 {
-  background-color: #042e27 !important;
+  background-color: black !important;
 }
-
-
 
 .nameTag {
   color: white;
-  text-align: center;
+  opacity: .8;
 
 }
 
 .nameTagText {
+  text-align: center;
+  background-color: black;
   position: absolute !important;
 }
 
+.rowRank {
+  margin-top: 5px !important;
+}
+
+.update {
+  text-align: center;
+  color: whitesmoke;
+  background-color: #b38c8f;
+  margin-top: 5px;
+}
+
+.server {
+  /* width: 90% !important; */
+  border-radius: 0 !important;
+  margin-top: 17px;
+}
+
 .rankImg {
-  width: 10% !important;
-  height: 10% !important;
+  width: 100% !important;
+  left: 0px;
+  background-color: #364966;
+  border: 5px solid #364966 !important;
+  border-radius: 0px !important;
 }
 
-/* @media screen and (max-width: 825px) {
-  .cardImg {
-    width: 15% !important;
-  }
+.col2 {
+  color: white;
+  text-align: center;
+  margin-top: 15px !important;
 }
 
-@media screen and (max-width: 550px) {
-  .cardImg {
-    width: 20% !important;
-  }
+/* Youtube */
+.youtube {
+  /* padding-top: 0px !important; */
+  background-color: #fa4454;
+  border-radius: 0 0 3px 3px;
 }
 
-@media screen and (max-width: 400px) {
-  .cardImg {
-    width: 40% !important;
-  }
-} */

@@ -3,12 +3,14 @@ import Axios from 'axios';
 import Youtube from "./component/Youtube/Youtube";
 import './Rank.css';
 
-import image from "./images/Valorant_logo.jpeg"
+import valorantLogo from "./images/Valorant_logo.jpeg"
+import naServer from "./images/na.png"
 
 import Card from "react-bootstrap/Card";
 import CardHeader from 'react-bootstrap/esm/CardHeader';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 
 function App() {
   const url = "https://api.henrikdev.xyz/valorant/v1/mmr/na/Sunbearo/NA1?fbclid=IwAR3kLapneRvgX_KVWg15YyiNg4Whsd1kGwNrLGUFNkoHH4hfzVgoHIpDnGg"
@@ -41,27 +43,32 @@ function App() {
     content =
     <Card>
       <Card.Body className='cardHeader'>
-        <Card.Img className='title' src={image} />
+        <Card.Img className='title' src={valorantLogo} />
       </Card.Body>
       
       <CardHeader className='cardHeader2'>
-        <div className='nameTag'><Card.Title className='nameTagText'>{rank.name} #{rank.tag}</Card.Title></div>  
+        <div className='nameTag'><Card.Title className='nameTagText'>{rank.name} #{rank.tag}</Card.Title></div> 
         <Card.Img className='cardImg' src={data.card.wide} />   
+
+        <Row className='rowRank'>
+          <Col>
+            <Card.Img className="rankImg" src={rank.images.large} alt={rank.currenttierpatched} />
+          </Col>
+          <Col className='col2' sm={6}>
+            <Card.Title>Rank: <strong>{rank.currenttierpatched}</strong></Card.Title>
+            <Card.Title>Rating: <strong>{rank.ranking_in_tier}</strong></Card.Title>
+          </Col>
+          <Col sm={3}>
+          <Card.Img className='server' src={naServer}></Card.Img> 
+          </Col>
+        </Row>    
+
+          <Card.Text className='update'>Updated {data.last_update}</Card.Text>
+
       </CardHeader>
 
-      <Card.Footer>
-          <Col>
-            <Card.Title>Current Rank: {rank.currenttierpatched}</Card.Title>
-            <Card.Title>RR: {rank.ranking_in_tier}</Card.Title>
-          </Col>
-            <Card.Img className="rankImg" src={rank.images.large} alt={rank.currenttierpatched} />
-      </Card.Footer>
-
-      <Card.Body>
+      <Card.Body className='youtube'>
         <Youtube embedId="l_sJOprlF30" />
-      </Card.Body>
-
-      <Card.Body> 
       </Card.Body>
     </Card>
   }
