@@ -11,7 +11,6 @@ import CardHeader from 'react-bootstrap/esm/CardHeader';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-
 function App() {
   const url = "https://api.henrikdev.xyz/valorant/v1/mmr/na/Sunbearo/NA1?fbclid=IwAR3kLapneRvgX_KVWg15YyiNg4Whsd1kGwNrLGUFNkoHH4hfzVgoHIpDnGg"
   const [rank, setRank] = useState("")
@@ -64,12 +63,12 @@ function App() {
         </Row>    
 
           <Card.Text className='update'>Updated {data.last_update}</Card.Text>
-
       </CardHeader>
 
       <Card.Body className='youtube'>
-        <YoutubeVideo embedId="l_sJOprlF30" />
+            <YoutubeVideo embedId="l_sJOprlF30" />
       </Card.Body>
+    
     </Card>
   }
 
