@@ -68,7 +68,6 @@ function App() {
       <Card.Body className='youtube'>
             <YoutubeVideo embedId="l_sJOprlF30" />
       </Card.Body>
-    
     </Card>
   }
 

@@ -3,9 +3,15 @@
   margin: 0 auto;
   float: none;
   margin-bottom: 10px;
-  width: 25%;
+  width: 33%;
   position: relative;
-  margin-top: 10px;
+  margin-top: 50px;
+
+  box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+  animation: 1s ease 0s 1 fadeInAnimation;
+  backface-visibility: hidden;
+  transition-duration: 0.3s;
+  transition-property: transform;
 }
 
 /* Top Header */
@@ -49,24 +55,21 @@
 }
 
 .server {
-  /* width: 90% !important; */
   border-radius: 0 !important;
   margin-top: 17px;
 }
 
 .rankImg {
-  width: 100% !important;
   left: 0px;
   background-color: #364966;
   border: 5px solid #364966 !important;
-  /* border-radius: 0px !important; */
 }
 
 .col2 {
   color: white;
   text-align: center;
   margin-top: 15px !important;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Youtube */
@@ -74,6 +77,21 @@
   background-color: #fa4454;
   background: linear-gradient(#fa4454, #dc3d4b);
   border-radius: 0 0 3px 3px;
+}
+
+/* Animations */
+.card:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 992px) {
